@@ -1,0 +1,15 @@
+# This is a makefile
+
+
+all:  main.o SLLStack.o
+	g++ main.o SLLStack.o -o SLLStack
+
+main.o: main.cpp SLLStack.h
+	g++ -c main.cpp  -o main.o
+	
+SLLStack.o: SLLStack.cpp Lnode.h Employee.h SLLStack.h
+	g++ -c SLLStack.cpp -o SLLStack.o
+
+clean: 
+	rm *.o
+
